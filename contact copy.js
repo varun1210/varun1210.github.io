@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with environment variable
+    (function() {
+      // Get EmailJS public key from environment variable
+      const emailJsPublicKey = process.env.EMAIL_JS_CODE;
+      if (emailJsPublicKey) {
+        emailjs.init(emailJsPublicKey);
+      } else {
+        console.error("EmailJS public key not found in environment variables");
+      }
+    })();
+    
+    // Check for headless browser
+    function isHeadlessBrowser() {
+      // Check for common headless browser characteristics
+      const isHeightZero = window.outerHeight === 0;
+      const isWidthZero = window.outerWidth === 0;
+      const userAgent = navigator.userAgent.toLowerCase();
+      const hasHeadlessFlags = 
+        userAgent.includes('headless') || 
+        userAgent.includes('phantomjs') || 
+        userAgent.includes('puppeteer');
+      
+      // Additional check for navigator properties
+      const navigatorCheck = 
+        navigator.webdriver || 
+        navigator.languages === undefined ||
+        navigator.languages.length === 0;
+      
+      return isHeightZero || isWidthZero || hasHeadlessFlags || navigatorCheck;
+    }
+    
     // DOM elements
     const contactForm = document.getElementById('contactForm');
     const emailInput = document.getElementById('email');
@@ -11,6 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      // Block submission from headless browsers
+      if (isHeadlessBrowser()) {
+        console.error('Submission blocked from headless browser');
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message show';
+        errorMessage.innerHTML = `<p>Automated submissions are not allowed.</p>`;
+        contactForm.appendChild(errorMessage);
+        
+        setTimeout(() => {
+          errorMessage.remove();
+        }, 5000);
+        
+        return;
+      }
       
       let isValid = true;
       
@@ -46,25 +92,61 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // If form is valid, process the submission
       if (isValid) {
-        // In a real implementation, you would send the form data to a server here
-        // For this example, we'll just simulate a successful submission
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
         
-        // Create success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message show';
-        successMessage.innerHTML = `<p>Thank you for your message! I'll get back to you soon.</p>`;
+        // Prepare the parameters for EmailJS
+        const templateParams = {
+          from_name: emailInput.value.trim(),
+          phone_number: phoneInput.value.trim() || 'Not provided',
+          message: messageInput.value.trim(),
+          to_email: 'varunmup1210@gmail.com'
+        };
         
-        // Add success message to form
-        contactForm.appendChild(successMessage);
-        
-        // Reset the form
-        contactForm.reset();
-        resetValidation();
-        
-        // Remove success message after 5 seconds
-        setTimeout(() => {
-          successMessage.remove();
-        }, 5000);
+        // Send the email using EmailJS
+        emailjs.send('default_service', 'template_id', templateParams)
+          .then(function(response) {
+            console.log('Email sent successfully:', response);
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message show';
+            successMessage.innerHTML = `<p>Thank you for your message! I'll get back to you soon.</p>`;
+            
+            // Add success message to form
+            contactForm.appendChild(successMessage);
+            
+            // Reset the form
+            contactForm.reset();
+            resetValidation();
+            
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+              successMessage.remove();
+            }, 5000);
+          }, function(error) {
+            console.error('Email failed to send:', error);
+            // Show error message
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message show';
+            errorMessage.innerHTML = `<p>Sorry, there was an error sending your message. Please try again later.</p>`;
+            
+            // Add error message to form
+            contactForm.appendChild(errorMessage);
+            
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+            
+            // Remove error message after 5 seconds
+            setTimeout(() => {
+              errorMessage.remove();
+            }, 5000);
+          });
       }
     });
     
@@ -164,9 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
       phoneError.textContent = '';
       messageError.textContent = '';
       
-      // Remove any existing success messages
-      const successMessages = document.querySelectorAll('.success-message');
-      successMessages.forEach(message => message.remove());
+      // Remove any existing messages
+      const messages = document.querySelectorAll('.success-message, .error-message');
+      messages.forEach(message => message.remove());
     }
     
     // Initialize external links to open in new tab

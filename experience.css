@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #333333;
+    --accent-color: #0077cc;
+    --border-color: #dddddd;
+    --secondary-color: #0055aa;
+    --tertiary-color: #f5f5f5;
+    --link-hover: #0055aa;
+    --text-font: "Courier Prime", monospace;
+    --section-spacing: 2rem;
+    --border-radius: 4px;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f7f7;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--text-font);
+    color: var(--primary-color);
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation styles */
+  .navbar {
+    margin: 0.5rem 3rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: var(--accent-color);
+  }
+  
+  /* Main content */
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Resume Sections */
+  .resume-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-color);
+  }
+  
+  /* Job sections */
+  .job, .education {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+  }
+  
+  .job:last-child, .education:last-child {
+    border-bottom: none;
+  }
+  
+  .job-header, .education-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+  }
+  
+  /* Company icon styles */
+  .company-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .company-icon-container {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .company-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+  }
+  
+  .company-container:hover .company-icon {
+    transform: scale(1.1);
+  }
+  
+  .company, .institution {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .role, .degree {
+    font-style: italic;
+    margin-bottom: 0.25rem;
+    margin-left: calc(32px + 0.75rem); /* Align with company text */
+  }
+  
+  .job-meta, .education-meta {
+    text-align: right;
+  }
+  
+  .job-date, .education-date, .job-location, .education-location {
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Lists */
+  ul {
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer styles */
+  .site-footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 992px) {
+    .navbar {
+      margin: 0 1.5rem;
+    }
+    
+    .nav-container {
+      gap: 1rem;
+    }
+    
+    main {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      margin: 0.25rem 1rem;
+    }
+    
+    .nav-container {
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    
+    .nav-link {
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+    }
+    
+    main {
+      padding: 1rem;
+    }
+    
+    .job-header, .education-header {
+      flex-direction: column;
+    }
+    
+    .job-meta, .education-meta {
+      text-align: left;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .navbar {
+      margin: 0;
+    }
+    
+    .nav-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    main {
+      padding: 0.75rem;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+    }
+    
+    .company, .institution {
+      font-size: 1rem;
+    }
+    
+    .company-icon-container {
+      width: 28px;
+      height: 28px;
+    }
+    
+    .company-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .role, .degree {
+      margin-left: calc(28px + 0.75rem);
+    }
+  }

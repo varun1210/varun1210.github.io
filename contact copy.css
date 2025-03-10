@@ -203,13 +203,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-color);
     transition: all 0.3s ease;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
   }
   
   .contact-item:hover .icon-container {
     background-color: var(--accent-color);
-    color: white;
+  }
+  
+  .contact-item:hover .social-icon {
+    transform: scale(1.1);
   }
   
   .contact-text {
@@ -257,6 +266,21 @@
   }
   
   .success-message.show {
+    display: block;
+  }
+  
+  /* Error message */
+  .error-message {
+    display: none;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--error-color);
+    border-left: 5px solid var(--error-color);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .error-message.show {
     display: block;
   }
   
@@ -348,5 +372,15 @@
     
     .submit-button {
       width: 100%;
+    }
+    
+    .icon-container {
+      width: 42px;
+      height: 42px;
+    }
+    
+    .social-icon {
+      width: 28px;
+      height: 28px;
     }
   }
