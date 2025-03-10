@@ -151,17 +151,28 @@ main {
   color: var(--primary-color);
 }
 
-/* Skills section */
+/* Skills section - Updated for better balance */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
 }
 
 .skill-category {
-  flex: 1;
-  min-width: 150px;
-  padding: 0 1.5rem;
   position: relative;
+  padding: 0 1.5rem;
+}
+
+/* Languages and Cloud sections (smaller collections) */
+.skill-category:nth-child(1),
+.skill-category:nth-child(2) {
+  flex: 0.8;
+  min-width: 130px;
+}
+
+/* Libraries/Frameworks section (larger collection) */
+.skill-category:nth-child(3) {
+  flex: 1.6;
+  min-width: 180px;
 }
 
 .skill-category:not(:last-child)::after {
@@ -181,13 +192,26 @@ main {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 0.5rem;
 }
 
+/* Adjust grid for different sections */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  gap: 1rem;
   list-style: none;
+  gap: 1rem;
+}
+
+.skill-category:nth-child(1) .skill-grid,
+.skill-category:nth-child(2) .skill-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-category:nth-child(3) .skill-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem 0.5rem;
 }
 
 .skill-item {
@@ -280,6 +304,16 @@ main {
   .typewriter-container {
     font-size: 1.5rem;
     height: 180px;
+  }
+  
+  /* Adjusted title sizes for better fit */
+  .category-title {
+    font-size: 0.9rem;
+  }
+  
+  /* Specific adjustment for the Libraries/Frameworks title */
+  .skill-category:nth-child(3) .category-title {
+    font-size: 0.85rem;
   }
 }
 
@@ -380,12 +414,30 @@ main {
     height: 120px;
   }
   
+  /* Adjust skills layout for mobile */
   .skills-container {
     flex-direction: column;
   }
   
+  .skill-category {
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  
   .skill-category:not(:last-child)::after {
     display: none;
+  }
+  
+  .skill-category:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Keep the 3-column grid for all categories on mobile */
+  .skill-category:nth-child(1) .skill-grid,
+  .skill-category:nth-child(2) .skill-grid,
+  .skill-category:nth-child(3) .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .about-content p {
