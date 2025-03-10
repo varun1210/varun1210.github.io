@@ -9,12 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
     pauseBeforeErasing: 2000
   };
   
-  const commonPrefix = "> Welcome!<br>I'm Varun Muppalla, ";
+  const commonPrefix = "> Welcome!<br>I'm Varun Muppalla, and I";
   
-  const textVariations = [
-    "and I'm passionate about all things data!",
-    "a finance enthusiast!",
-    "I love basketball!"
+  const textVariations = [  
+    "'m passionate about all things data!",  
+    "'m a finance enthusiast!",  
+    " love basketball!",  
+    "'m always building something!",  
+    "'m all about summer days, the beach, and ice cream.",  
+    " never say no to a great movie."
   ];
   
   let currentTextIndex = 0;
