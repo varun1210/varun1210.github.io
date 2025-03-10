@@ -45,6 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
       fullDescription: "Developed an automation tool for cold emailing using data scraped from a the world's largest professional networking social media website. Application data is saved to Postgres to generate automated reporting for outreach statistics.",
       githubLink: "https://github.com/varun1210/Email-Sender",
       image: "./project_images/email.png"
+    },
+    {
+      id: 6,
+      title: "Periscope Job Matcher",
+      shortDescription: "Job matching system with resume analysis",
+      technologies: "Apache Airflow, MongoDB, MySQL, Spring Boot, Lucene, React",
+      fullDescription: "Designed and deployed a data pipeline using Apache Airflow to scrape, clean, and load job data to MySQL. Created a monolithic backend with 3 modules using Spring Boot, Spring MVC, Spring Data, and Lucene to perform CRUD operations and enable search functionality to match users with jobs based on their resume. Designed and developed frontend using React.js for web-based clients to interact with the application.",
+      githubLink: "https://github.com/varun1210/Periscope",
+      image: "./project_images/periscope.png"
+    },
+    {
+      id: 7,
+      title: "Transaction Processor",
+      shortDescription: "Event-driven transaction processing system",
+      technologies: "Spring Boot, Event Sourcing, Microservices",
+      fullDescription: "Built a transaction processing system using Spring Boot with an event-driven architecture. The system follows a structured flow where transactions are received by a controller, processed by a transaction service, and then published to an event service. Events are stored in an event store for durability, while an event listener updates the application state. This architecture enables high throughput, resilience, and event sourcing capabilities, making it suitable for financial or high-volume transaction processing applications.",
+      githubLink: "https://github.com/varun1210/Transaction-Processor",
+      image: "./project_images/transactions.png"
     }
   ];
 
