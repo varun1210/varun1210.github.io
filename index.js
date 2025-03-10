@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const config = {
     typingSpeed: 100,
     eraseSpeed: 50,
-    pauseBetweenTexts: 2000,
+    pauseBetweenTexts: 1000,
     pauseBeforeErasing: 2000
   };
   
