@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gideon+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./resume.css" />
+    <title>Varun Muppalla - Resume</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="./index.html" class="nav-link">> ABOUT ME</a>
+        <a href="./resume.html" class="nav-link active">> RESUME</a>
+        <a href="./projects.html" class="nav-link">> PROJECTS</a>
+        <a href="./contact.html" class="nav-link">> CONTACT</a>
+      </div>
+    </nav>
+    
+    <main>
+      <header class="resume-header">
+        <h1 class="name">Varun Muppalla</h1>
+      </header>
+      
+      <section class="resume-section">
+        <h2 class="section-title">:PROFESSIONAL EXPERIENCE:</h2>
+        
+        <div class="job">
+          <div class="job-header">
+            <div class="company-role">
+              <h3 class="company">PCS Retirement, LLC</h3>
+              <p class="role">Data Engineer - Contract</p>
+            </div>
+            <div class="job-meta">
+              <p class="job-date">Jan 2025 – Present</p>
+              <p class="job-location">Philadelphia, PA, USA</p>
+            </div>
+          </div>
+          <ul class="job-responsibilities">
+            <li>Refactoring data transformation pipelines from legacy systems (SQL Server, SQL Server Management Studio) to Azure Data Factory and Azure Databricks.</li>
+          </ul>
+        </div>
+        
+        <div class="job">
+          <div class="job-header">
+            <div class="company-role">
+              <h3 class="company">Kaiburr LLC</h3>
+              <p class="role">Data Engineer / Data Scientist</p>
+            </div>
+            <div class="job-meta">
+              <p class="job-date">Feb 2024 – Jan 2025</p>
+              <p class="job-location">Boston, MA, USA</p>
+            </div>
+          </div>
+          <ul class="job-responsibilities">
+            <li>Led the development of multiple ELT pipelines by collaborating with cross-functional teams of analysts and stakeholders (healthcare and hospitals) to process and deliver data to various teams.</li>
+            <li>Programmed and deployed SQL data transformation scripts on Snowflake using dbt (data build tool) and GitHub Actions to create data sets for data science and analytics teams. Orchestrated these scripts using Apache Airflow.</li>
+            <li>Developed a library for common utility functionalities like logging, processing flat files, and email sending, thereby reducing development time and standardizing code across modules.</li>
+            <li>Built a REST API using Django and Azure Functions to deliver aggregated data to app development teams.</li>
+            <li>Evaluated various linear and non-linear models (Logistic Regression, Random Forest, SVM) to develop a model to classify whether a patient will be a no-show at an appointment with an accuracy of 92% and recall 97%.</li>
+          </ul>
+        </div>
+        
+        <div class="job">
+          <div class="job-header">
+            <div class="company-role">
+              <h3 class="company">Yahoo Inc.</h3>
+              <p class="role">Data Engineer / Data Science Intern</p>
+            </div>
+            <div class="job-meta">
+              <p class="job-date">Jun 2023 – Aug 2023</p>
+              <p class="job-location">New York, NY, USA</p>
+            </div>
+          </div>
+          <ul class="job-responsibilities">
+            <li>Wrote Python ingestion scripts for 4 semi-structured data sources (APIs, MongoDB, JSON flat files) containing security and vulnerability data. Developed dimensional data model and stored in columnar format in a data lake.</li>
+            <li>Cleaned and preprocessed the data, performed descriptive statistical analysis, and reported vulnerabilities to security engineers. Brainstormed and developed 10+ KPIs on Tableau.</li>
+            <li>Refactored data transformation logic and converted Splunk queries to PySpark, reducing ingestion times by 60%.</li>
+            <li>Developed an XGBoost model to classify the criticality of internal security vulnerabilities, reducing average incident response time from 3 days to 4 hours.</li>
+          </ul>
+        </div>
+        
+        <div class="job">
+          <div class="job-header">
+            <div class="company-role">
+              <h3 class="company">ZS Associates</h3>
+              <p class="role">Data Analytics Engineer / Data Scientist</p>
+            </div>
+            <div class="job-meta">
+              <p class="job-date">Feb 2021 – Aug 2022</p>
+              <p class="job-location">Pune, MH, India</p>
+            </div>
+          </div>
+          <ul class="job-responsibilities">
+            <li>Led the development of the SCA-CM (supply chain analytics - contract manufacturing) data analysis module, resulting in an 18% reduction of contract manufacturing costs.</li>
+            <li>Architected an ETL Pipeline using AWS Databricks to fetch and aggregate data from multiple massive data sources (EDWs, flat files) and generate a 70 GB geographical dataset used by 6 teams.</li>
+            <li>Built a big data pipeline using AWS Databricks and Tableau leading to a reduction of operating cost of a manufacturing supply chain by $1.1 million.</li>
+            <li>Built a time-series forecasting model using ARIMA and Gradient Boosting in Python to forecast SKUs inventory at a monthly level for 5 years; included feature engineering like PCA and clustering to increase the accuracy of the model.</li>
+            <li>Refactored complex SQL queries on Hive to PySpark, eliminating data inconsistencies and execution timeout issues.</li>
+            <li>Developed a GitLab CI/CD pipeline for migration of deployment of software components.</li>
+            <li>Developed sales forecast for newly launched drugs using multiple linear regression.</li>
+          </ul>
+        </div>
+        
+        <div class="job">
+          <div class="job-header">
+            <div class="company-role">
+              <h3 class="company">Winspire Technologies</h3>
+              <p class="role">Business Intelligence Engineer / Data Science Intern</p>
+            </div>
+            <div class="job-meta">
+              <p class="job-date">Feb 2020 – Nov 2020</p>
+              <p class="job-location">Bangalore, KA, India</p>
+            </div>
+          </div>
+          <ul class="job-responsibilities">
+            <li>Optimized 50+ SQL queries on AWS Glue and Google BigQuery; improved system performance and dashboard refresh times.</li>
+            <li>Developed a dashboard on Looker to visualize SaaS usage metrics.</li>
+            <li>Performed customer segmentation using K-means clustering on AWS Sagemaker to recommend similar features.</li>
+            <li>Designed and executed A/B tests for the search feature in an internal tool, increasing usage by 12%.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section class="resume-section">
+        <h2 class="section-title">:EDUCATION:</h2>
+        
+        <div class="education">
+          <div class="education-header">
+            <div class="institution-degree">
+              <h3 class="institution">State University of New York at Buffalo</h3>
+              <p class="degree">Master of Science in Data Science</p>
+            </div>
+            <div class="education-meta">
+              <p class="education-date">Aug 2022 – Jan 2024</p>
+              <p class="education-location">Buffalo, NY, USA</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education">
+          <div class="education-header">
+            <div class="institution-degree">
+              <h3 class="institution">Vellore Institute of Technology</h3>
+              <p class="degree">Bachelor of Technology in Information Technology</p>
+            </div>
+            <div class="education-meta">
+              <p class="education-date">Jul 2017 – Jun 2021</p>
+              <p class="education-location">Vellore, TN, India</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="site-footer">
+      <div class="footer-content"></div>
+    </footer>
+    
+    <script src="./resume.js"></script>
+  </body>
+</html>

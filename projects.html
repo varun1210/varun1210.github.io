@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Gideon+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./projects.css" />
+    <title>Varun Muppalla - Projects</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="./index.html" class="nav-link">> ABOUT ME</a>
+        <a href="./resume.html" class="nav-link">> RESUME</a>
+        <a href="./projects.html" class="nav-link active">> PROJECTS</a>
+        <a href="./contact.html" class="nav-link">> CONTACT</a>
+      </div>
+    </nav>
+    
+    <main>
+      <header class="projects-header">
+        <h1 class="projects-title">:MY PROJECTS:</h1>
+        <p class="projects-subtitle">Scroll through to explore my data science and engineering projects</p>
+      </header>
+      
+      <section class="project-carousel">
+        <button class="carousel-button prev" id="prevButton">&lt;</button>
+        
+        <div class="carousel-container">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Project cards will be added here -->
+          </div>
+        </div>
+        
+        <button class="carousel-button next" id="nextButton">&gt;</button>
+      </section>
+      
+      <section class="project-detail" id="projectDetail">
+        <!-- Project details will be displayed here -->
+      </section>
+    </main>
+    
+    <footer class="site-footer">
+      <div class="footer-content"></div>
+    </footer>
+    
+    <script src="./projects.js"></script>
+  </body>
+</html>
