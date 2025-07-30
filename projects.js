@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 6,
       title: "Periscope Job Matcher",
       shortDescription: "Job matching system with resume analysis",
-      technologies: "Apache Airflow, MongoDB, MySQL, Spring Boot, Lucene, React",
-      fullDescription: "Designed and deployed a data pipeline using Apache Airflow to scrape, clean, and load job data to MySQL. Created a monolithic backend with 3 modules using Spring Boot, Spring MVC, Spring Data, and Lucene to perform CRUD operations and enable search functionality to match users with jobs based on their resume. Designed and developed frontend using React.js for web-based clients to interact with the application.",
+      technologies: "Apache Airflow, MongoDB, PostgreSQL, FastAPI, React",
+      fullDescription: "Designed and deployed a data pipeline using Apache Airflow to scrape, clean, and load job data to MySQL. Created a monolithic backend with 3 modules using FastAPI to perform CRUD operations and enable search functionality to match users with jobs based on their resume. Designed and developed frontend using React.js for web-based clients to interact with the application.",
       githubLink: "https://github.com/varun1210/Periscope",
       image: "./project_images/periscope.png"
     },
